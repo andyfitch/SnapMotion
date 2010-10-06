@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+		<link rel="stylesheet/less" href="css/snapmotion.less" type="text/css" />
+		<script src="js/html5.js"></script>
+		<script src="js/less-1.0.18.min.js"></script>
+		<script src="js/jquery-1.4.2.min.js"></script>
+		<script src="js/jquery.snapmotion.js"></script>
+	</head>
+	
+	<body>
+		<section id="container">
+			<header>
+				<h1><a href="/">SnapMotion</a></h1>
+				<span class="jQueryLogo">jQuery plugin</span>
+			</header>
+			<section class="main">
+				<ul id="slideshow">
+					<li><img src="img/log_cabin_1.png" alt="Test Image 1" width="960" height="399" /></li>
+					<li><img src="img/log_cabin_2.png" alt="Test Image 2" width="960" height="399" /></li>
+					<li><img src="img/log_cabin_3.png" alt="Test Image 3" width="960" height="399" /></li>
+					<li><img src="img/log_cabin_4.png" alt="Test Image 4" width="960" height="399" /></li>
+					<li><img src="img/log_cabin_5.jpg" alt="Test Image 5" width="960" height="399" /></li>
+				</ul>
+				<div class="content">
+					<h2>Features</h2>
+					<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+					<ul>
+						<li>Feature 1</li>
+						<li>Feature 2</li>
+						<li>Feature 3</li>
+						<li>Feature 4</li>
+						<li>Feature 5</li>
+					</ul>
+					<h2>Documentation</h2>
+					<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+				</div>
+			</section>
+			<footer>
+				<p><a href="http://snapshotmedia.co.uk/">Web Design York</a> - <a href="http://snapshotmedia.co.uk/">Snapshot Media</a> &copy; 2010</p>
+			</footer>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$("ul#slideshow").SnapMotion({
+						'slideWidth'	: 960,
+						'cIndent'		: 640,
+						'fadeLength'	: 375,
+						'ssDelay'		: 7500
+					});
+				});
+			</script>
+		</section>
+	</body>
+</html>
