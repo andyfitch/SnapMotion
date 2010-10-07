@@ -2,9 +2,14 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+		<link rel="stylesheet" href="css/shCore.css" type="text/css" />
+		<link rel="stylesheet" href="css/shThemeDefault.css" type="text/css" />
 		<link rel="stylesheet/less" href="css/snapmotion.less" type="text/css" />
 		<script src="js/html5.js"></script>
 		<script src="js/less-1.0.18.min.js"></script>
+		<script src="js/shCore.js"></script>
+		<script src="js/shBrushXml.js"></script>
+		<script src="js/shBrushJScript.js"></script>
 		<script src="js/jquery-1.4.2.min.js"></script>
 		<script src="js/jquery.snapmotion.js"></script>
 	</head>
@@ -17,24 +22,57 @@
 			</header>
 			<section class="main">
 				<ul id="slideshow">
-					<li><img src="img/log_cabin_1.png" alt="Test Image 1" width="960" height="399" /></li>
-					<li><img src="img/log_cabin_2.png" alt="Test Image 2" width="960" height="399" /></li>
-					<li><img src="img/log_cabin_3.png" alt="Test Image 3" width="960" height="399" /></li>
-					<li><img src="img/log_cabin_4.png" alt="Test Image 4" width="960" height="399" /></li>
-					<li><img src="img/log_cabin_5.jpg" alt="Test Image 5" width="960" height="399" /></li>
+					<li><img src="img/test_image_1.jpg" alt="Test Image 1" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet.</p></span></li>
+					<li><img src="img/test_image_2.jpg" alt="Test Image 2" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet.</p></span></li>
+					<li><img src="img/test_image_3.jpg" alt="Test Image 3" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet.</p></span></li>
+					<li><img src="img/test_image_4.jpg" alt="Test Image 4" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet.</p></span></li>
+					<li><img src="img/test_image_5.jpg" alt="Test Image 5" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet.</p></span></li>
+					<li><img src="img/test_image_6.jpg" alt="Test Image 5" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet. Lorem ispum dolor sit amet.</p></span></li>
 				</ul>
 				<div class="content">
-					<h2>Features</h2>
-					<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+					<h2><span>Features</span></h2>
+					<p>This plugin was built to make creating a slideshow on your website extremely simple and painless. By including the few files provided in this package, you'll be up and running within minutes.</p>
 					<ul>
-						<li>Feature 1</li>
-						<li>Feature 2</li>
-						<li>Feature 3</li>
-						<li>Feature 4</li>
-						<li>Feature 5</li>
+						<li>Auto-sliding</li>
+						<li>Image titles &amp; captions</li>
+						<li>Flexible configuration</li>
 					</ul>
-					<h2>Documentation</h2>
-					<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+					<h2><span>Documentation</span></h2>
+					<p>Firstly, you'll need to reference the SnapMotion JavaScript and CSS files within your &lt;head&gt; tag.</p>
+					<pre class="brush: html">
+						&lt;script src="js/jquery.snapmotion.js"&gt;&lt;/script&gt;
+						&lt;link rel="stylesheet" href="css/jquery.snapmotion.css" type="text/css" /&gt;</pre>
+					<p>Create your slides using a &lt;ul&gt; with a &lt;li&gt; for each slide. Each &lt;li&gt; should include the slide &lt;img /&gt; and a &lt;span&gt; tag containing any text you'd like to display on the slide.</p>
+					<p>For example:</p>
+					<pre class="brush: html">
+						&lt;ul id="slideshow"&gt;
+							&lt;li&gt;&lt;img src="img/test_image_1.jpg" alt="Test Image 1" width="960" height="400" /&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;img src="img/test_image_2.jpg" alt="Test Image 2" width="960" height="400" /&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;img src="img/test_image_3.jpg" alt="Test Image 3" width="960" height="400" /&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;img src="img/test_image_4.jpg" alt="Test Image 4" width="960" height="400" /&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;img src="img/test_image_5.jpg" alt="Test Image 5" width="960" height="400" /&gt;&lt;/li&gt;
+						&lt;/ul&gt;</pre>
+					<p>Finally, call the SnapMotion() method on your slideshow. For example:</p>
+					<pre class="brush: js">
+						$("ul#slideshow").SnapMotion();</pre>
+					<p>Optional parameters include:</p>
+					<ul>
+						<li><em>slideWidth</em> (the width of a slide)</li>
+						<li><em>cIndent</em> (the indentation of the 'controls' for the slideshow, in pixels, from the left of each slide)</li>
+						<li><em>fadeLength</em> (the length, in milliseconds, of each slide transition)</li>
+						<li><em>ssDelay</em> (the length, in milliseconds, between each slide transition)</li>
+					</ul>
+					<pre class="brush: js">
+						&lt;script type="text/javascript"&gt;
+							$(document).ready(function(){
+								$("ul#slideshow").SnapMotion({
+									'slideWidth'	: 960,
+									'cIndent'		: 640,
+									'fadeLength'	: 375,
+									'ssDelay'		: 7500
+								});
+							});
+						&lt;/script&gt;</pre>
 				</div>
 			</section>
 			<footer>
@@ -42,12 +80,18 @@
 			</footer>
 			<script type="text/javascript">
 				$(document).ready(function(){
+					SyntaxHighlighter.all();
+					
 					$("ul#slideshow").SnapMotion({
 						'slideWidth'	: 960,
 						'cIndent'		: 640,
 						'fadeLength'	: 375,
 						'ssDelay'		: 7500
 					});
+
+					setTimeout(function(){
+						$("div.toolbar").hide();
+					}, 1000);
 				});
 			</script>
 		</section>

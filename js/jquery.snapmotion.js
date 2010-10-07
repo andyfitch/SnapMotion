@@ -25,6 +25,23 @@
 		var ssWidth = settings['slideWidth'] * (limit+1);	// Width of whole slideshow					
 		var fadeStep = settings['fadeLength'] + 50;			// Transition timeout length
 
+		// Insert controls into DOM
+		var controlsString = '<div id="slideshowcontrols"><ul>';
+		for (var i = 1; i <= el.children("li").size(); i++) {
+			controlsString += '<li><div class="content"></div><ul class="controls"><li class="prev"><a href="#">&lt; Previous</a></li><li class="next"><a href="#">Next &gt;</a></li></ul></li>';
+		}
+		controlsString += '</ul><img src="img/feature_shades.png" alt="Feature shades" width="960" height="399" class="featureShades" /></div>';
+		
+		jQuery(controlsString).insertAfter(el);
+		
+		// Pull control content from <span> into controls
+		for (var i = 0; i <= limit; i++) {
+			var span = el.children("li").eq(i).find("span");
+			var controlHtml = span.html();
+			span.remove();
+			el.siblings("#slideshowcontrols").children("ul").children("li").eq(i).children("div.content").html(controlHtml);
+		}
+		
 		var newLeftIndex = limit;
 		var newRightIndex = limit - 1;
 		var furthestSlideLeft = el.children("li").eq(newLeftIndex);
@@ -32,15 +49,6 @@
 		var furthestControlsLeft = el.siblings("#slideshowcontrols").children("ul").children("li").eq(newLeftIndex);
 		var furthestControlsRight = el.siblings("#slideshowcontrols").children("ul").children("li").eq(newRightIndex);
 		var interval = 0;
-		
-		// Insert controls into DOM
-		var controlsString = '<div id="slideshowcontrols"><ul>';
-		for (var i = 1; i <= el.children("li").size(); i++) {
-			controlsString += '<li><div class="content"><h3>Heading ' + i + '</h3><p>Test paragraph ' + i + '</p></div><ul class="controls"><li class="prev"><a href="#">&lt; Previous</a></li><li class="next"><a href="#">Next &gt;</a></li></ul></li>';
-		}
-		controlsString += '</ul><img src="img/feature_shades.png" alt="Feature shades" width="960" height="399" class="featureShades" /></div>';
-		
-		jQuery(controlsString).insertAfter(el);
 
 		// Hide slideshow items, position them
 		el.children("li").hide().each(function(){

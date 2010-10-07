@@ -25,6 +25,8 @@ p {
 	color: #4B4B4B;
 }
 
+table { font-size: 1.2em; }
+
 hr {
 	height: 0;
 	margin: 0 0 20px;
@@ -69,16 +71,16 @@ section#container {
 		padding: 0 10px;
 		background: transparent url(img/wood_head_foot.png) no-repeat 0 0;
 		h1 {
-			width: 277px;
-			height: 57px;
+			width: 279px;
+			height: 96px;
 			position: absolute;
-			top: 45px;
+			top: 30px;
 			left: 30px;
 			background: transparent url(img/logo.png) no-repeat 0 0;
 			a {
-				width: 277px;
+				width: 279px;
 				height: 0;
-				padding: 57px 0 0;
+				padding: 96px 0 0;
 				overflow: hidden;
 				display: block;
 				outline: none;
@@ -229,11 +231,18 @@ section#container {
 			min-height: 200px;
 			padding: 10px;
 			h2 {
-				display: inline-block;
-				padding: 5px;
-				color: #FFF;
-				font-size: 16px;
-				background: #4082AE none;
+				width: 960px;
+				display: block;
+				position: relative;
+				left: -10px;
+				background: #EEE none;
+				span {
+					display: inline-block;
+					padding: 5px;
+					color: #FFF;
+					font-size: 16px;
+					background: #4082AE none;
+				}
 			}
 			ul {
 				margin: 0 0 20px;
@@ -248,6 +257,11 @@ section#container {
 				font-size: 12px;
 				line-height: 15px;
 				margin: 0 0 10px;
+			}
+			div.syntaxhighlighter {
+				width: auto !important;
+				border: dashed 1px #AAA;
+				padding: 10px;
 			}
 		}
 	}
