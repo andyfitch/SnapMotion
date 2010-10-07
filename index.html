@@ -29,6 +29,12 @@
 					<li><img src="src/img/test_image_6.jpg" alt="Test Image 5" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p></span></li>
 				</ul>
 				<div class="content">
+					<h2><span>What is it?</span></h2>
+					<p>SnapMotion is a free, open source (<a href="http://www.opensource.org/licenses/mit-license.html">MIT License</a>) jQuery plugin. It is easily integrated into your website.</p>
+
+					<h2><span>Compatibility</span></h2>
+					<p>Firefox 3.6+, Chrome 5+, Safari 5. Other browser may work fine, this is untested. YMMV.</p>
+
 					<h2><span>Demo</span></h2>
 					<p>View our demonstrations:</p>
 					<ul>
@@ -50,11 +56,20 @@
 					<p>For example:</p>
 					<pre class="brush: html">
 						&lt;ul id="slideshow"&gt;
-							&lt;li&gt;&lt;img src="img/test_image_1.jpg" alt="Test Image 1" width="960" height="400" /&gt;&lt;/li&gt;
-							&lt;li&gt;&lt;img src="img/test_image_2.jpg" alt="Test Image 2" width="960" height="400" /&gt;&lt;/li&gt;
-							&lt;li&gt;&lt;img src="img/test_image_3.jpg" alt="Test Image 3" width="960" height="400" /&gt;&lt;/li&gt;
-							&lt;li&gt;&lt;img src="img/test_image_4.jpg" alt="Test Image 4" width="960" height="400" /&gt;&lt;/li&gt;
-							&lt;li&gt;&lt;img src="img/test_image_5.jpg" alt="Test Image 5" width="960" height="400" /&gt;&lt;/li&gt;
+							<li>
+								<img src="src/img/test_image_1.jpg" alt="Test Image 1" width="960" height="399" />
+								<span>
+									<h3>Heading here</h3>
+									<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+								</span>
+							</li>
+							<li>
+								<img src="src/img/test_image_2.jpg" alt="Test Image 2" width="960" height="399" />
+								<span>
+									<h3>Heading here</h3>
+									<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+								</span>
+							</li>
 						&lt;/ul&gt;</pre>
 					<p>Finally, call the SnapMotion() method on your slideshow. For example:</p>
 					<pre class="brush: js">
@@ -62,18 +77,18 @@
 					<p>Optional parameters include:</p>
 					<ul>
 						<li><em>slideWidth</em> (the width of a slide)</li>
-						<li><em>cIndent</em> (the indentation of the 'controls' for the slideshow, in pixels, from the left of each slide)</li>
-						<li><em>fadeLength</em> (the length, in milliseconds, of each slide transition)</li>
-						<li><em>ssDelay</em> (the length, in milliseconds, between each slide transition)</li>
+						<li><em>controlIndent</em> (the indentation of the 'controls' for the slideshow, in pixels, from the left of each slide)</li>
+						<li><em>animationLength</em> (the length, in milliseconds, of each slide transition)</li>
+						<li><em>delay</em> (the length, in milliseconds, between each slide transition)</li>
 					</ul>
 					<pre class="brush: js">
 						&lt;script type="text/javascript"&gt;
 							$(document).ready(function(){
 								$("ul#slideshow").SnapMotion({
 									'slideWidth'	: 960,
-									'cIndent'		: 640,
-									'fadeLength'	: 375,
-									'ssDelay'		: 7500
+									'controlIndent'		: 640,
+									'animationLength'	: 375,
+									'delay'		: 7500
 								});
 							});
 						&lt;/script&gt;</pre>
@@ -88,9 +103,9 @@
 					
 					$("ul#slideshow").SnapMotion({
 						'slideWidth'	: 960,
-						'cIndent'		: 640,
-						'fadeLength'	: 375,
-						'ssDelay'		: 7500
+						'controlIndent'		: 640,
+						'animationLength'	: 375,
+						'delay'		: 7500
 					});
 
 					setTimeout(function(){

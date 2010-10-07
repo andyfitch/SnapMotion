@@ -10,10 +10,10 @@
 		var el = this;
 		
 		var settings = {
-			'slideWidth'	: 960,	// Width of the slideshow
-			'cIndent'		: 640,	// Indentation of control area (px)
-			'fadeLength'	: 375,	// Length of fade (ms)
-			'ssDelay'		: 7500	// Delay between slides (ms)
+			'slideWidth': 960,	// Width of the slideshow
+			'controlIndent': 640,	// Indentation of control area (px)
+			'animationLength': 375,	// Length of fade (ms)
+			'delay': 7500	// Delay between slides (ms)
 		};
 		
 		if (options) { 
@@ -23,7 +23,7 @@
 		var isAnimating = false;							// Flag to check whether elements are animating
 		var limit = el.children("li").size() - 1;			// Zero-indexed slide count
 		var ssWidth = settings['slideWidth'] * (limit+1);	// Width of whole slideshow					
-		var fadeStep = settings['fadeLength'] + 50;			// Transition timeout length
+		var fadeStep = settings['animationLength'] + 50;			// Transition timeout length
 
 		// Insert controls into DOM
 		var controlsString = '<div id="slideshowcontrols"><ul>';
@@ -57,7 +57,7 @@
 		});
 		// Hide slideshow controls, position them
 		el.siblings("#slideshowcontrols").children("ul").children("li").hide().each(function(){
-			var xPos = (el.siblings("#slideshowcontrols").children("ul").children("li").index(jQuery(this)) * settings['slideWidth']) + settings['cIndent'];
+			var xPos = (el.siblings("#slideshowcontrols").children("ul").children("li").index(jQuery(this)) * settings['slideWidth']) + settings['controlIndent'];
 			jQuery(this).css({'left' : xPos + 'px'});
 		});
 
@@ -94,31 +94,31 @@
 		function pushNext() {
 			el.children("li").animate({
 				left: '-=' + settings['slideWidth']
-			}, settings['fadeLength']);
+			}, settings['animationLength']);
 			setTimeout(function(){
 				el.siblings("#slideshowcontrols").children("ul").children("li").animate({
 					left: '-=' + settings['slideWidth']
-				}, settings['fadeLength']);
+				}, settings['animationLength']);
 				setTimeout(function(){
 					rejig(true);			// Throw boundary slide & controls to end of queue
 					isAnimating = false;	// Re-enable clicking
 				}, fadeStep);
-			}, settings['fadeLength']);
+			}, settings['animationLength']);
 		}
 
 		function pushPrev() {
 			el.children("li").animate({
 				left: '+=' + settings['slideWidth']
-			}, settings['fadeLength']);
+			}, settings['animationLength']);
 			setTimeout(function(){
 				el.siblings("#slideshowcontrols").children("ul").children("li").animate({
 					left: '+=' + settings['slideWidth']
-				}, settings['fadeLength']);
+				}, settings['animationLength']);
 				setTimeout(function(){
 					rejig(false);			// Throw boundary slide & controls to end of queue
 					isAnimating = false;	// Re-enable clicking
 				}, fadeStep);
-			}, settings['fadeLength']);
+			}, settings['animationLength']);
 		}
 
 		// Rejig the slides so the current slide is always in the middle of the queue
@@ -143,7 +143,7 @@
 		function startSlideshow() {
 			interval = setInterval(function(){
 				pushNext();
-			}, settings['ssDelay']);
+			}, settings['delay']);
 		}
 
 		function resetSlideshow() {
