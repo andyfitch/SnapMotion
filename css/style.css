@@ -252,7 +252,7 @@ section#container footer {
   height:14px;
   position:relative;
   padding:15px;
-  background:transparent url(../img/wood_head_foot.png) no-repeat 0 -150px;
+  background:transparent url(../img/wood_head_foot.png) no-repeat 0 0;
 }
 section#container {
   width:960px;
