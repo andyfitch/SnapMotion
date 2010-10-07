@@ -68,8 +68,8 @@
 		el.siblings(".snapmotion-controls").children("ul").children("li").eq(limit).animate({'left' : '-=' + ssWidth}, 1);
 
 		// Fade slides & controls in
-		el.children("li").fadeIn(375);
-		el.siblings(".snapmotion-controls").children("ul").children("li").fadeIn(375);
+		el.children("li").fadeIn(settings['animationLength']);
+		el.siblings(".snapmotion-controls").children("ul").children("li").fadeIn(settings['animationLength']);
 		
 		// Hey, ho, let's go!
 		startSlideshow();
