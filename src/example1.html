@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+		<link rel="stylesheet" href="css/jquery.snapmotion.css" type="text/css" />
+		<script src="js/jquery-1.4.2.min.js"></script>
+		<script src="js/jquery.snapmotion.js"></script>
+		<style type="text/css">
+			html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+			blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+			font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+			dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+			tfoot, thead, tr, th, td {
+			  margin:0;
+			  padding:0;
+			  border:0;
+			  outline:0;
+			}
+			html, body { height:100%; }
+		</style>
+	</head>
+	
+	<body>
+		<ul id="slideshow">
+			<li><img src="img/test_image_1.jpg" alt="Test Image 1" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p></span></li>
+			<li><img src="img/test_image_2.jpg" alt="Test Image 2" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p></span></li>
+			<li><img src="img/test_image_3.jpg" alt="Test Image 3" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p></span></li>
+			<li><img src="img/test_image_4.jpg" alt="Test Image 4" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p></span></li>
+			<li><img src="img/test_image_5.jpg" alt="Test Image 5" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p></span></li>
+			<li><img src="img/test_image_6.jpg" alt="Test Image 5" width="960" height="399" /><span><h3>Heading here</h3><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p></span></li>
+		</ul>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("ul#slideshow").SnapMotion();
+			});
+		</script>
+	</body>
+</html>

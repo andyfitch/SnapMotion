@@ -1,0 +1,116 @@
+ul#slideshow {
+	width:960px;
+	height:400px;
+	overflow:hidden;
+	position:relative;
+	padding:0;
+	margin:0;
+	z-index:25;
+}
+ul#slideshow li {
+	width:960px;
+	height:400px;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:50;
+	list-style:none;
+}
+
+div#slideshowcontrols {
+	width:960px;
+	height:400px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:75;
+}
+div#slideshowcontrols ul {
+	width:960px;
+	height:400px;
+	overflow:hidden;
+	padding:0;
+	margin:0;
+	z-index:100;
+}
+div#slideshowcontrols ul li {
+	width:250px;
+	height:330px;
+	position:absolute;
+	top:35px;
+	left:0;
+	z-index:125;
+	list-style:none;
+}
+div#slideshowcontrols ul li ul.controls {
+	width:252px;
+	height:40px;
+}
+div#slideshowcontrols ul li ul.controls li {
+	width:125px;
+	height:40px;
+	float:left;
+	display:inline;
+	position:relative;
+	margin:0;
+	top:0;
+	left:0;
+	list-style:none;
+}
+div#slideshowcontrols ul li ul.controls li.prev {
+	border-top:solid 1px #000000;
+	border-bottom:solid 1px #000000;
+	border-left:solid 1px #000000;
+}
+div#slideshowcontrols ul li ul.controls li.next {
+	border-top:solid 1px #000000;
+	border-right:solid 1px #000000;
+	border-bottom:solid 1px #000000;
+}
+div#slideshowcontrols ul li ul.controls li a {
+	width:105px;
+	height:40px;
+	padding:0 10px;
+	display:block;
+	color:#ffffff;
+	line-height:40px;
+	text-align:center;
+	text-decoration:none;
+	font-size:16px;
+	background:rgba(0,0,0,0.8);
+}
+div#slideshowcontrols ul li ul.controls li a:hover { background:rgba(0,0,0,0.85); }
+div#slideshowcontrols img.featureShades {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:60;
+}
+
+div#slideshowcontrols ul li div.content {
+	width:230px;
+	height:180px;
+	height:auto !important;
+	min-height:180px;
+	padding:10px;
+	margin:0 0 30px;
+	background:rgba(0,0,0,0.8);
+	border:solid 1px #000000;
+}
+div#slideshowcontrols ul li div.content ul {
+	width:230px;
+	padding:0 0 0 30px;
+	margin:0 0 10px;
+}
+div#slideshowcontrols ul li div.content ul li {
+	list-style-type:disc;
+	margin:0 0 5px;
+}
+div#slideshowcontrols ul li div.content h3 { color:#ffffff; }
+div#slideshowcontrols ul li div.content p {
+	color:#ffffff;
+	font-size:12px;
+	line-height:20px;
+	margin:0 0 5px;
+}

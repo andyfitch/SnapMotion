@@ -1,0 +1,266 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+}
+html, body { height:100%; }
+ul, ul li { list-style:disc; }
+ul li, ol li {
+  margin:0 0 10px;
+  color:#4b4b4b;
+}
+ul, ol {
+  padding:0 0 0 30px;
+  margin:0 0 15px;
+}
+p { color:#4b4b4b; }
+table { font-size:1.2em; }
+hr {
+  height:0;
+  margin:0 0 20px;
+  border:none;
+  display:block;
+}
+body {
+  font-size:62.5%;
+  font-family:Arial, Helvetica, Sans-Serif;
+  color:#ffffff;
+  line-height:1;
+  background:#222222 none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight:normal;
+  margin:0 0 15px;
+}
+h1 { font-size:2.7em; }
+h2 { font-size:2.3em; }
+h3 { font-size:1.8em; }
+header, section, footer {
+  display:block;
+  position:relative;
+}
+section#container header h1 a {
+  width:279px;
+  height:0;
+  padding:96px 0 0;
+  overflow:hidden;
+  display:block;
+  outline:none;
+}
+section#container header h1 {
+  width:283px;
+  height:98px;
+  position:absolute;
+  top:28px;
+  left:30px;
+  background:transparent url(../img/logo.png) no-repeat 0 0;
+}
+section#container header span.jQueryLogo {
+  width:215px;
+  height:0;
+  padding:81px 0 0;
+  overflow:hidden;
+  display:block;
+  position:absolute;
+  top:35px;
+  right:30px;
+  background:transparent url(../img/jQuery_logo.png) no-repeat 0 0;
+}
+section#container header {
+  width:940px;
+  height:150px;
+  position:relative;
+  padding:0 10px;
+  background:transparent url(../img/wood_head_foot.png) no-repeat 0 0;
+}
+
+/* SnapMotion Slideshow CSS */
+section#container section.main ul#slideshow li {
+  width:960px;
+  height:400px;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:50;
+  list-style:none;
+}
+section#container section.main ul#slideshow {
+  width:960px;
+  height:400px;
+  overflow:hidden;
+  position:relative;
+  padding:0;
+  margin:0;
+  z-index:25;
+}
+section#container section.main div#slideshowcontrols ul li div.content h3 { color:#ffffff; }
+section#container section.main div#slideshowcontrols ul li div.content p {
+  color:#ffffff;
+  font-size:12px;
+  line-height:20px;
+  margin:0 0 5px;
+}
+section#container section.main div#slideshowcontrols ul li div.content ul li {
+  list-style-type:disc;
+  margin:0 0 5px;
+}
+section#container section.main div#slideshowcontrols ul li div.content ul {
+  width:230px;
+  padding:0 0 0 30px;
+  margin:0 0 10px;
+}
+section#container section.main div#slideshowcontrols ul li div.content {
+  width:230px;
+  height:180px;
+  height:auto !important;
+  min-height:180px;
+  padding:10px;
+  margin:0 0 30px;
+  background:rgba(0,0,0,0.8);
+  border:solid 1px #000000;
+}
+section#container section.main div#slideshowcontrols ul li ul.controls li a {
+  width:105px;
+  height:40px;
+  padding:0 10px;
+  display:block;
+  color:#ffffff;
+  line-height:40px;
+  text-align:center;
+  text-decoration:none;
+  font-size:16px;
+  background:rgba(0,0,0,0.8);
+}
+section#container section.main div#slideshowcontrols ul li ul.controls li a:hover { background:rgba(0,0,0,0.85); }
+section#container section.main div#slideshowcontrols ul li ul.controls li {
+  width:125px;
+  height:40px;
+  float:left;
+  display:inline;
+  position:relative;
+  margin:0;
+  top:0;
+  left:0;
+  list-style:none;
+}
+section#container section.main div#slideshowcontrols ul li ul.controls li.prev {
+  border-top:solid 1px #000000;
+  border-bottom:solid 1px #000000;
+  border-left:solid 1px #000000;
+}
+section#container section.main div#slideshowcontrols ul li ul.controls li.next {
+  border-top:solid 1px #000000;
+  border-right:solid 1px #000000;
+  border-bottom:solid 1px #000000;
+}
+section#container section.main div#slideshowcontrols ul li ul.controls {
+  width:252px;
+  height:40px;
+}
+section#container section.main div#slideshowcontrols ul li {
+  width:250px;
+  height:330px;
+  position:absolute;
+  top:35px;
+  left:0;
+  z-index:125;
+  list-style:none;
+}
+section#container section.main div#slideshowcontrols ul {
+  width:960px;
+  height:400px;
+  overflow:hidden;
+  padding:0;
+  margin:0;
+  z-index:100;
+}
+section#container section.main div#slideshowcontrols img.featureShades {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:60;
+}
+section#container section.main div#slideshowcontrols {
+  width:960px;
+  height:400px;
+  overflow:hidden;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:75;
+}
+section#container section.main div.content h2 span {
+  display:inline-block;
+  padding:5px;
+  color:#ffffff;
+  font-size:16px;
+  background:#4082ae none;
+}
+section#container section.main div.content h2 {
+  display:block;
+  background:#eeeeee none;
+}
+section#container section.main div.content ul li a:hover {
+  text-decoration: underline;
+}
+section#container section.main div.content ul li a {
+  color: #4082AE;
+  text-decoration: none;
+}
+section#container section.main div.content ul li {
+  color:#000000;
+  font-size:12px;
+  line-height:15px;
+}
+section#container section.main div.content ul { margin:0 0 20px; }
+section#container section.main div.content p {
+  color:#000000;
+  font-size:12px;
+  line-height:15px;
+  margin:0 0 10px;
+}
+section#container section.main div.content div.syntaxhighlighter {
+  width:auto !important;
+  border:dashed 1px #aaaaaa;
+  padding:10px;
+}
+section#container section.main div.content {
+  width:900px;
+  height:200px;
+  height:auto !important;
+  min-height:200px;
+  padding:30px;
+}
+section#container section.main {
+  width:960px;
+  height:200px;
+  height:auto !important;
+  min-height:200px;
+  padding:0;
+  position:relative;
+}
+section#container footer p a { color:#ffffff; }
+section#container footer p {
+  color:#ffffff;
+  text-align:right;
+  margin:0 10px;
+  font-size:12px;
+}
+section#container footer {
+  width:940px;
+  height:14px;
+  position:relative;
+  padding:15px;
+  background:transparent url(../img/wood_head_foot.png) no-repeat 0 -150px;
+}
+section#container {
+  width:960px;
+  height:500px;
+  height:auto !important;
+  min-height:500px;
+  padding:0;
+  position:relative;
+  margin:0 auto;
+  background:#ffffff none;
+}
