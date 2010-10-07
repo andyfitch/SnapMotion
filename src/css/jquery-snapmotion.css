@@ -1,4 +1,4 @@
-ul#slideshow {
+ul.snapmotion {
 	width:960px;
 	height:400px;
 	overflow:hidden;
@@ -7,7 +7,7 @@ ul#slideshow {
 	margin:0;
 	z-index:25;
 }
-ul#slideshow li {
+ul.snapmotion li {
 	width:960px;
 	height:400px;
 	position:absolute;
@@ -17,7 +17,7 @@ ul#slideshow li {
 	list-style:none;
 }
 
-div#slideshowcontrols {
+div.snapmotion-controls {
 	width:960px;
 	height:400px;
 	overflow:hidden;
@@ -26,7 +26,7 @@ div#slideshowcontrols {
 	left:0;
 	z-index:75;
 }
-div#slideshowcontrols ul {
+div.snapmotion-controls ul {
 	width:960px;
 	height:400px;
 	overflow:hidden;
@@ -34,7 +34,7 @@ div#slideshowcontrols ul {
 	margin:0;
 	z-index:100;
 }
-div#slideshowcontrols ul li {
+div.snapmotion-controls ul li {
 	width:250px;
 	height:330px;
 	position:absolute;
@@ -43,11 +43,11 @@ div#slideshowcontrols ul li {
 	z-index:125;
 	list-style:none;
 }
-div#slideshowcontrols ul li ul.controls {
+div.snapmotion-controls ul li ul.controls {
 	width:252px;
 	height:40px;
 }
-div#slideshowcontrols ul li ul.controls li {
+div.snapmotion-controls ul li ul.controls li {
 	width:125px;
 	height:40px;
 	float:left;
@@ -58,17 +58,17 @@ div#slideshowcontrols ul li ul.controls li {
 	left:0;
 	list-style:none;
 }
-div#slideshowcontrols ul li ul.controls li.prev {
+div.snapmotion-controls ul li ul.controls li.prev {
 	border-top:solid 1px #000000;
 	border-bottom:solid 1px #000000;
 	border-left:solid 1px #000000;
 }
-div#slideshowcontrols ul li ul.controls li.next {
+div.snapmotion-controls ul li ul.controls li.next {
 	border-top:solid 1px #000000;
 	border-right:solid 1px #000000;
 	border-bottom:solid 1px #000000;
 }
-div#slideshowcontrols ul li ul.controls li a {
+div.snapmotion-controls ul li ul.controls li a {
 	width:105px;
 	height:40px;
 	padding:0 10px;
@@ -80,15 +80,15 @@ div#slideshowcontrols ul li ul.controls li a {
 	font-size:16px;
 	background:rgba(0,0,0,0.8);
 }
-div#slideshowcontrols ul li ul.controls li a:hover { background:rgba(0,0,0,0.85); }
-div#slideshowcontrols img.featureShades {
+div.snapmotion-controls ul li ul.controls li a:hover { background:rgba(0,0,0,0.85); }
+div.snapmotion-controls img.featureShades {
 	position:absolute;
 	top:0;
 	left:0;
 	z-index:60;
 }
 
-div#slideshowcontrols ul li div.content {
+div.snapmotion-controls ul li div.snapmotion-content {
 	width:230px;
 	height:180px;
 	height:auto !important;
@@ -98,17 +98,17 @@ div#slideshowcontrols ul li div.content {
 	background:rgba(0,0,0,0.8);
 	border:solid 1px #000000;
 }
-div#slideshowcontrols ul li div.content ul {
+div.snapmotion-controls ul li div.snapmotion-content ul {
 	width:230px;
 	padding:0 0 0 30px;
 	margin:0 0 10px;
 }
-div#slideshowcontrols ul li div.content ul li {
+div.snapmotion-controls ul li div.snapmotion-content ul li {
 	list-style-type:disc;
 	margin:0 0 5px;
 }
-div#slideshowcontrols ul li div.content h3 { color:#ffffff; }
-div#slideshowcontrols ul li div.content p {
+div.snapmotion-controls ul li div.snapmotion-content h3 { color:#ffffff; }
+div.snapmotion-controls ul li div.snapmotion-content p {
 	color:#ffffff;
 	font-size:12px;
 	line-height:20px;

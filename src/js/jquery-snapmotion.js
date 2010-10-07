@@ -9,6 +9,8 @@
 	$.fn.SnapMotion = function(options) {
 		var el = this;
 		
+		jQuery(el).addClass('snapmotion');
+		
 		var settings = {
 			'slideWidth': 960,	// Width of the slideshow
 			'controlIndent': 640,	// Indentation of control area (px)
@@ -26,9 +28,9 @@
 		var fadeStep = settings['animationLength'] + 50;			// Transition timeout length
 
 		// Insert controls into DOM
-		var controlsString = '<div id="slideshowcontrols"><ul>';
+		var controlsString = '<div class="snapmotion-controls"><ul>';
 		for (var i = 1; i <= el.children("li").size(); i++) {
-			controlsString += '<li><div class="content"></div><ul class="controls"><li class="prev"><a href="#">&lt; Previous</a></li><li class="next"><a href="#">Next &gt;</a></li></ul></li>';
+			controlsString += '<li><div class="snapmotion-content"></div><ul class="controls"><li class="prev"><a href="#">&lt; Previous</a></li><li class="next"><a href="#">Next &gt;</a></li></ul></li>';
 		}
 		controlsString += '</ul><img src="img/feature_shades.png" alt="Feature shades" width="960" height="399" class="featureShades" /></div>';
 		
@@ -39,15 +41,15 @@
 			var span = el.children("li").eq(i).find("span");
 			var controlHtml = span.html();
 			span.remove();
-			el.siblings("#slideshowcontrols").children("ul").children("li").eq(i).children("div.content").html(controlHtml);
+			el.siblings(".snapmotion-controls").children("ul").children("li").eq(i).children("div.snapmotion-content").html(controlHtml);
 		}
 		
 		var newLeftIndex = limit;
 		var newRightIndex = limit - 1;
 		var furthestSlideLeft = el.children("li").eq(newLeftIndex);
 		var furthestSlideRight = el.children("li").eq(newRightIndex);
-		var furthestControlsLeft = el.siblings("#slideshowcontrols").children("ul").children("li").eq(newLeftIndex);
-		var furthestControlsRight = el.siblings("#slideshowcontrols").children("ul").children("li").eq(newRightIndex);
+		var furthestControlsLeft = el.siblings(".snapmotion-controls").children("ul").children("li").eq(newLeftIndex);
+		var furthestControlsRight = el.siblings(".snapmotion-controls").children("ul").children("li").eq(newRightIndex);
 		var interval = 0;
 
 		// Hide slideshow items, position them
@@ -56,27 +58,27 @@
 			jQuery(this).css({'left' : xPos + 'px'});
 		});
 		// Hide slideshow controls, position them
-		el.siblings("#slideshowcontrols").children("ul").children("li").hide().each(function(){
-			var xPos = (el.siblings("#slideshowcontrols").children("ul").children("li").index(jQuery(this)) * settings['slideWidth']) + settings['controlIndent'];
+		el.siblings(".snapmotion-controls").children("ul").children("li").hide().each(function(){
+			var xPos = (el.siblings(".snapmotion-controls").children("ul").children("li").index(jQuery(this)) * settings['slideWidth']) + settings['controlIndent'];
 			jQuery(this).css({'left' : xPos + 'px'});
 		});
 
 		// Move last slide behind first for smooth transitioning
 		el.children("li").eq(limit).animate({'left' : '-=' + ssWidth}, 1);
-		el.siblings("#slideshowcontrols").children("ul").children("li").eq(limit).animate({'left' : '-=' + ssWidth}, 1);
+		el.siblings(".snapmotion-controls").children("ul").children("li").eq(limit).animate({'left' : '-=' + ssWidth}, 1);
 
 		// Fade slides & controls in
 		el.children("li").fadeIn(375);
-		el.siblings("#slideshowcontrols").children("ul").children("li").fadeIn(375);
+		el.siblings(".snapmotion-controls").children("ul").children("li").fadeIn(375);
 		
 		// Hey, ho, let's go!
 		startSlideshow();
 		
 		// Slideshow control navigation event handling
-		el.siblings("#slideshowcontrols").find(".controls li a").click(function(){
+		el.siblings(".snapmotion-controls").find(".controls li a").click(function(){
 			var topLi = jQuery(this).parents("ul.controls").parent();
 			var parentLi = jQuery(this).parent();
-			var index = el.siblings("#slideshowcontrols").children("ul").children("li").index(jQuery(this).parents("ul.controls").parent());
+			var index = el.siblings(".snapmotion-controls").children("ul").children("li").index(jQuery(this).parents("ul.controls").parent());
 			if (!isAnimating) {
 				isAnimating = true;
 
@@ -96,7 +98,7 @@
 				left: '-=' + settings['slideWidth']
 			}, settings['animationLength']);
 			setTimeout(function(){
-				el.siblings("#slideshowcontrols").children("ul").children("li").animate({
+				el.siblings(".snapmotion-controls").children("ul").children("li").animate({
 					left: '-=' + settings['slideWidth']
 				}, settings['animationLength']);
 				setTimeout(function(){
@@ -111,7 +113,7 @@
 				left: '+=' + settings['slideWidth']
 			}, settings['animationLength']);
 			setTimeout(function(){
-				el.siblings("#slideshowcontrols").children("ul").children("li").animate({
+				el.siblings(".snapmotion-controls").children("ul").children("li").animate({
 					left: '+=' + settings['slideWidth']
 				}, settings['animationLength']);
 				setTimeout(function(){
@@ -135,9 +137,9 @@
 				newRightIndex = ((el.children("li").index(furthestSlideRight) > 0) ? el.children("li").index(furthestSlideRight) - 1 : limit);
 			}
 			furthestSlideLeft = el.children("li").eq(newLeftIndex);
-			furthestControlsLeft = el.siblings("#slideshowcontrols").children("ul").children("li").eq(newLeftIndex);
+			furthestControlsLeft = el.siblings(".snapmotion-controls").children("ul").children("li").eq(newLeftIndex);
 			furthestSlideRight = el.children("li").eq(newRightIndex);
-			furthestControlsRight = el.siblings("#slideshowcontrols").children("ul").children("li").eq(newRightIndex);
+			furthestControlsRight = el.siblings(".snapmotion-controls").children("ul").children("li").eq(newRightIndex);
 		}
 		
 		function startSlideshow() {
