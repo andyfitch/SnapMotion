@@ -77,7 +77,7 @@ section#container header {
 
 section#container section.main div.content h2 span {
   display:inline-block;
-  padding:5px;
+  padding:5px 8px;
   color:#ffffff;
   font-size:16px;
   background:#4082ae none;

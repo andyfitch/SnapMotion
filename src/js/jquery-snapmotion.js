@@ -15,12 +15,14 @@
 			'slideWidth': 960,		// Width of the slideshow
 			'slideHeight': 400,		// Height of the slideshow
 			'showCaption': true,	// Whether to show caption area
+			'captionWidth': 900,	// Width of caption area
+			'captionHeight': 50,	// Height of caption area
 			'showControls' : true,	// Whether to show next/prev controls
-			'controlIndentX': 640,	// Indentation of control area from left (px)
-			'controlIndentY': 35,	// Indentation of control area from top (px)
+			'controlIndentX': 20,	// Indentation of control area from left (px)
+			'controlIndentY': 20,	// Indentation of control area from top (px)
 			'animationLength': 375,	// Length of fade (ms)
 			'delay': 7500,			// Delay between slides (ms)
-			'transition':'slideY'	// Transition type
+			'transition':'slideX'	// Transition type
 		};
 		
 		if (options) { 
@@ -39,25 +41,31 @@
 			var controlsString = '<div class="snapmotion-controls"><ul>';
 			for (var i = 1; i <= el.children("li").size(); i++) {
 				controlsString += '<li>';
+				controlsString += '<div class="posRel">';
 				if (settings['showCaption']) {
 					controlsString += '<div class="snapmotion-content"></div>';
 				}
 				if (settings['showControls']) {
 					controlsString += '<ul class="controls"><li class="prev"><a href="#">Previous</a></li><li class="next"><a href="#">Next</a></li></ul>';
 				}
+				controlsString += '</div>';
 				controlsString += '</li>';
 			}
 			controlsString += '</ul>';
-			controlsString += '<img src="img/feature_shades.png" alt="Feature shades" width="' + settings['slideWidth'] + '" height="' + settings['slideHeight'] + '" class="featureShades" /></div>';
 			
 			jQuery(controlsString).insertAfter(el);
+			
+			$("div.snapmotion-controls > ul > li")
+				.css({'width' : settings['captionWidth'] + 22 + 'px', 'height' : settings['captionHeight'] + 22 + 'px'})
+				.find("div.snapmotion-content")
+				.css({'width' : settings['captionWidth'], 'height' : settings['captionHeight']});
 		
 			// Pull control content from <span> into controls
 			for (var i = 0; i <= limit; i++) {
 				var span = el.children("li").eq(i).find("span");
 				var controlHtml = span.html();
 				span.remove();
-				el.siblings(".snapmotion-controls").children("ul").children("li").eq(i).children("div.snapmotion-content").html(controlHtml);
+				el.siblings(".snapmotion-controls").children("ul").children("li").eq(i).find("div.snapmotion-content").html(controlHtml);
 			}
 		}
 		
@@ -90,7 +98,7 @@
 				el.siblings(".snapmotion-controls").children("ul").children("li").fadeIn(settings['animationLength']);
 				
 				// Rejig the slides so the current slide is always in the middle of the queue
-				function rejig(isNext) {
+				function rejigX(isNext) {
 					if (isNext) {
 						furthestSlideLeft.animate({'left' : '+=' + ssWidth}, 1);
 						furthestControlsLeft.animate({'left' : '+=' + ssWidth}, 1);
@@ -136,7 +144,7 @@
 				el.siblings(".snapmotion-controls").children("ul").children("li").fadeIn(settings['animationLength']);
 				
 				// Rejig the slides so the current slide is always in the middle of the queue
-				function rejig(isNext) {
+				function rejigY(isNext) {
 					if (isNext) {
 						furthestSlideTop.animate({'top' : '+=' + ssHeight}, 1);
 						furthestControlsTop.animate({'top' : '+=' + ssHeight}, 1);
@@ -202,10 +210,10 @@
 							left: '-=' + settings['slideWidth']
 						}, settings['animationLength']);
 						setTimeout(function(){
-							rejig(true);			// Throw boundary slide & controls to end of queue
+							rejigX(true);			// Throw boundary slide & controls to end of queue
 							isAnimating = false;	// Re-enable clicking
 						}, animationStep);
-					}, settings['animationLength']);
+					}, settings['animationLength']/3);
 					break;
 				case 'slideY':
 					el.children("li").animate({
@@ -216,10 +224,10 @@
 							top: '-=' + settings['slideHeight']
 						}, settings['animationLength']);
 						setTimeout(function(){
-							rejig(true);			// Throw boundary slide & controls to end of queue
+							rejigY(true);			// Throw boundary slide & controls to end of queue
 							isAnimating = false;	// Re-enable clicking
 						}, animationStep);
-					}, settings['animationLength']);
+					}, settings['animationLength']/3);
 					break;
 				case 'fade':
 					if (currIndex != nextIndex) {
@@ -249,7 +257,7 @@
 							left: '+=' + settings['slideWidth']
 						}, settings['animationLength']);
 						setTimeout(function(){
-							rejig(false);			// Throw boundary slide & controls to end of queue
+							rejigX(false);			// Throw boundary slide & controls to end of queue
 							isAnimating = false;	// Re-enable clicking
 						}, animationStep);
 					}, settings['animationLength']);
@@ -263,7 +271,7 @@
 							top: '+=' + settings['slideHeight']
 						}, settings['animationLength']);
 						setTimeout(function(){
-							rejig(false);			// Throw boundary slide & controls to end of queue
+							rejigY(false);			// Throw boundary slide & controls to end of queue
 							isAnimating = false;	// Re-enable clicking
 						}, animationStep);
 					}, settings['animationLength']);

@@ -6,6 +6,7 @@ ul.snapmotion {
 	padding:0;
 	margin:0;
 	z-index:25;
+	background: #000;
 }
 ul.snapmotion li {
 	width:960px;
@@ -35,17 +36,21 @@ div.snapmotion-controls ul {
 	z-index:100;
 }
 div.snapmotion-controls ul li {
-	width:250px;
 	height:330px;
 	position:absolute;
 	top:0;
 	left:0;
 	z-index:125;
 	list-style:none;
+	margin:0;
+	background: transparent url(../img/controls_bg.png) repeat 0 0;
 }
 div.snapmotion-controls ul li ul.controls {
 	width:252px;
 	height:40px;
+	position: absolute;
+	bottom: -60px;
+	right: 0;
 }
 div.snapmotion-controls ul li ul.controls li {
 	width:125px;
@@ -78,24 +83,11 @@ div.snapmotion-controls ul li ul.controls li a {
 	text-align:center;
 	text-decoration:none;
 	font-size:16px;
-	background:rgba(0,0,0,0.8);
+	background: transparent url(../img/controls_bg.png) repeat 0 0;
 }
-div.snapmotion-controls ul li ul.controls li a:hover { background:rgba(0,0,0,0.85); }
-div.snapmotion-controls img.featureShades {
-	position:absolute;
-	top:0;
-	left:0;
-	z-index:60;
-}
-
 div.snapmotion-controls ul li div.snapmotion-content {
-	width:230px;
-	height:180px;
-	height:auto !important;
-	min-height:180px;
 	padding:10px;
-	margin:0 0 30px;
-	background:rgba(0,0,0,0.8);
+	margin:0;
 	border:solid 1px #000000;
 }
 div.snapmotion-controls ul li div.snapmotion-content ul {
@@ -114,3 +106,5 @@ div.snapmotion-controls ul li div.snapmotion-content p {
 	line-height:20px;
 	margin:0 0 5px;
 }
+
+.posRel { position: relative; }
