@@ -22,7 +22,7 @@
 			'controlIndentY': 20,	// Indentation of control area from top (px)
 			'animationLength': 375,	// Length of fade (ms)
 			'delay': 7500,			// Delay between slides (ms)
-			'transition':'slideX'	// Transition type
+			'transition': 'slideX'	// Transition type
 		};
 		
 		if (options) { 
