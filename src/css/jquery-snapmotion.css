@@ -38,7 +38,7 @@ div.snapmotion-controls ul li {
 	width:250px;
 	height:330px;
 	position:absolute;
-	top:35px;
+	top:0;
 	left:0;
 	z-index:125;
 	list-style:none;
